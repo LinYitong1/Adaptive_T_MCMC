@@ -83,7 +83,6 @@ semantic_github_minimal/
 │   └── fitted_m4b_oaf.json
 │
 ├── requirements.txt
-├── .gitattributes
 ├── .gitignore
 └── README.md
 ```
@@ -194,20 +193,20 @@ This separation is important. The main claim is not that the model reproduces ev
 
 The repository uses precomputed candidate-set assets:
 
-- sentence-embedding vectors,
-- embedding-distance matrices,
+- unit-normalized sentence-embedding vectors (`data/embeddings/animals_embeddings.npy`, ~15 MB),
+- kNN index files,
 - candidate vocabulary,
 - LLM prompt scores,
 - human animal-fluency lists.
 
-The distance matrix is stored with Git LFS because the file is larger than GitHub's regular file-size limit.
+The pairwise distance matrix is **not committed**: it is derived on the fly at load time
+from the embeddings (`distance_sq = 2 - 2·a·b`, `distance = sqrt(distance_sq)`). This keeps
+every file well under 25 MB (repo ≈ 22 MB), so no Git LFS is required. If you happen to
+have `animals_distance_sq.npy` / `animals_distance_matrix.npy` locally, dropping them into
+`data/embeddings/` is also supported (they are used directly when present).
 
-```bash
-git lfs install
-git clone <repo-url>
-```
-
-The simulation pipeline reads these assets directly and does not require running the original LLM scoring or embedding-generation pipeline.
+The simulation pipeline reads these assets directly and does not require running the
+original LLM scoring or embedding-generation pipeline (no `torch` / `transformers`).
 
 ---
 
@@ -251,7 +250,7 @@ In posterior predictive checks, M4b captures central semantic-trajectory signatu
 
 - Random seeds are set inside the simulation scripts where applicable.
 - Precomputed reference tables are included for inspection and plotting.
-- Large numerical assets are tracked with Git LFS.
+- No Git LFS needed: the only sizable asset is the 15 MB embeddings file; the large distance matrix is recomputed from it at load time.
 - The release is intentionally minimal: development notebooks, exploratory scripts, and unused intermediate outputs are excluded.
 
 ---
