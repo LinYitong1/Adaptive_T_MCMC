@@ -107,15 +107,17 @@ def load_embedding_cache(category: str, emb_dir: Path) -> dict:
     words = [None] * len(word_index)
     for w, i in word_index.items():
         words[i] = w
-    distance_sq = np.load(emb_dir / f"{prefix}_distance_sq.npy")
-    # The full distance matrix is derived as sqrt(distance_sq) when the (large) cached
-    # matrix is absent; the minimal release ships only distance_sq.npy.
+    embeddings = np.load(emb_dir / f"{prefix}_embeddings.npy")
+    # The minimal release ships only the (15 MB) unit-normalized embeddings; the large
+    # pairwise distance arrays are derived on the fly. Use the cached arrays if present.
+    dsq_path = emb_dir / f"{prefix}_distance_sq.npy"
+    distance_sq = np.load(dsq_path) if dsq_path.exists() else squared_distance_matrix(embeddings)
     dm_path = emb_dir / f"{prefix}_distance_matrix.npy"
     distance_matrix = np.load(dm_path) if dm_path.exists() else np.sqrt(distance_sq)
     return {
         "words": words,
         "word_index": word_index,
-        "embeddings": np.load(emb_dir / f"{prefix}_embeddings.npy"),
+        "embeddings": embeddings,
         "distance_matrix": distance_matrix,
         "distance_sq": distance_sq,
         "knn_indices": np.load(emb_dir / f"{prefix}_knn_indices.npy"),

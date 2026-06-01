@@ -142,10 +142,9 @@ def standalone_data_files(paths: ProjectPaths, category: str = "animals") -> dic
     return {
         "vocab": paths.vocab / f"{category}_vocab.json",
         "llm_scores": paths.llm_scores / f"{category}_prompt_scores.parquet",
+        # The pairwise distance arrays are derived on the fly from the unit-normalized
+        # embeddings, so only the (small) embeddings file is required here.
         "embeddings": paths.embeddings / f"{category}_embeddings.npy",
-        # distance_matrix is derived on the fly from distance_sq (= sqrt) to avoid
-        # shipping a redundant 200 MB array; we only require distance_sq here.
-        "distance_sq": paths.embeddings / f"{category}_distance_sq.npy",
         "knn_indices": paths.embeddings / f"{category}_knn_indices.npy",
         "word_index": paths.embeddings / f"{category}_word_index.json",
         "categories": paths.vocab / f"{category}_categories.json",
