@@ -1,0 +1,61 @@
+{
+  "features_for_later_model_compare": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "p90_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm"
+  ],
+  "abcrf_primary_features": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "p90_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm"
+  ],
+  "prior_variant": "wide",
+  "abcrf_robustness_feature_sets": {
+    "with_median_norm_mu": [
+      "mean_adjacent_distance",
+      "sd_adjacent_distance",
+      "p90_adjacent_distance",
+      "switch_rate_distance",
+      "n_relevant_bigrams_norm",
+      "mu_latency_median_norm"
+    ],
+    "with_raw_mu": [
+      "mean_adjacent_distance",
+      "sd_adjacent_distance",
+      "p90_adjacent_distance",
+      "switch_rate_distance",
+      "n_relevant_bigrams_norm",
+      "mu_latency_raw_pooled"
+    ]
+  },
+  "latency_mu_note": "Primary ABC-RF / M4b ABC use 7 semantic-lexical features only. mu_latency_median_norm and mu_latency_raw_pooled are timing diagnostics (robustness ABC-RF or PPC), not model-selection targets.",
+  "diagnostic_columns_not_used_as_primary_features": [
+    "list_length",
+    "frequency_likelihood",
+    "mu_latency_median_norm",
+    "mu_latency_raw_pooled"
+  ],
+  "models": [
+    "M4b_adaptive_T_global"
+  ],
+  "n_draws_per_model": 1000,
+  "n_lists_per_draw": 50,
+  "max_steps": 500,
+  "latency_cap": 150,
+  "seed": 20260601,
+  "freq_alpha": 0.5,
+  "frequency_likelihood_method": "doc_freq_length_exponent_geomean_eq10",
+  "bigram_method": "cn_window_cooccurrence_significance",
+  "bigram_min_count": 3,
+  "bigram_window": 2,
+  "bigram_sig_z": 1.96,
+  "n_relevant_bigram_pairs": 186,
+  "relevant_bigram_length_slope": 0.261305018321543,
+  "human_mean_length_for_bigram_norm": 20.692923898531376,
+  "cohort": "oaf",
+  "human_fluency_path": "/Users/linyitong/Documents/llm/LLM_social_R/semantic_tempering_sft/data/processed/animals_fluency_oaf.csv"
+}

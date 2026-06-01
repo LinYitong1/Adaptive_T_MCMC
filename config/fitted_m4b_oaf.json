@@ -1,0 +1,33 @@
+{
+  "params": {
+    "model_id": "M4b_adaptive_T_global",
+    "category": "animals",
+    "eta": 0.21465393179297299,
+    "T_min": 1.1658398162947647,
+    "T_max": 2.7471250725025778,
+    "a": 1.2988573572529658,
+    "b": 4.52148396042684,
+    "sigma_q": 0.47612174423694426,
+    "p_global": 0.25,
+    "p_jump": 0.15,
+    "fixed_T": 1.5,
+    "gamma0": -1.995938670087046,
+    "gamma1": 0.5462388441250475,
+    "k_neighbors": 20,
+    "max_steps": 500,
+    "use_latency_cap": true,
+    "latency_cap": 150,
+    "random_seed": 8752,
+    "switch_quantile": 0.8
+  },
+  "meta": {
+    "selection": "composite_mechanism_budget_timing",
+    "composite": 1.8862152956460958,
+    "distance": 0.6602008161741646,
+    "distance_mechanism": 0.31210297604927945,
+    "distance_budget": 0.3989924737441901,
+    "timing_distance": 0.38806368605421804,
+    "n_samples_search": 120,
+    "n_lists_search": 14
+  }
+}

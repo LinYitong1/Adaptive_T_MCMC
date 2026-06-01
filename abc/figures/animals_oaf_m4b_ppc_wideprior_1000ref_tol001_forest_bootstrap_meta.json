@@ -1,0 +1,8 @@
+{
+  "cohort": "oaf",
+  "n_boot_requested": 0,
+  "n_boot_successful": 0,
+  "n_boot_skipped": 0,
+  "latency_mu_bootstrap_sd": NaN,
+  "scale_source": "human list-bootstrap SD"
+}

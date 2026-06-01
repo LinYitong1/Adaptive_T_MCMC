@@ -1,0 +1,35 @@
+{
+  "abc_features": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm"
+  ],
+  "include_length_in_abc": false,
+  "ppc_stats": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm",
+    "p90_adjacent_distance",
+    "mean_adjacent_similarity",
+    "mu_latency_median_norm",
+    "mu_latency_raw_pooled"
+  ],
+  "features": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm"
+  ],
+  "reference_prefix": "/Users/linyitong/Documents/llm/LLM_social_R/semantic_tempering_sft/outputs/tables/animals_oaf_lopez_style_reference_M4b_wideprior_1000x50_cap150",
+  "accept_frac": 0.01,
+  "n_m4b_reference_rows": 998,
+  "n_accepted": 10,
+  "n_unique_posterior_used": 10,
+  "ppc_draws": 100,
+  "ppc_lists_per_draw": 50,
+  "seed": 20260601,
+  "abc_distance_scaling": "M4b prior-predictive SD per feature, ddof=1 (sample SD)",
+  "display_scaling_note": "ABC rejection uses model prior-predictive SD (this script). Forest plots (29_plot_m4b_ppc_forest.py) standardize by human list-level SD or list-bootstrap SD for mu_latency_median_norm."
+}

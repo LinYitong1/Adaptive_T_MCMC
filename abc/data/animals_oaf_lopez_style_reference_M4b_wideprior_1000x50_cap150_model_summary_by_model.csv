@@ -1,0 +1,2 @@
+model_id,n_rows,n_valid,list_length_mean,list_length_sd,mean_adjacent_distance,sd_adjacent_distance,p90_adjacent_distance,switch_rate_distance,n_relevant_bigrams_norm
+M4b_adaptive_T_global,1000,998,15.81882,6.308652320559577,0.9749185375865228,0.1276354679645164,1.0980436019537163,0.21358563133773553,2.410407808506845

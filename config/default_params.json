@@ -1,0 +1,22 @@
+{
+  "params": {
+    "model_id": "M4_adaptive_T",
+    "category": "animals",
+    "prompt": "Name one animal. Answer with a single animal name only.",
+    "eta": 0.5,
+    "T_min": 0.5,
+    "T_max": 3.0,
+    "a": 0.0,
+    "b": 2.0,
+    "sigma_q": 0.35,
+    "p_global": 0.25,
+    "k_neighbors": 20,
+    "max_steps": 500,
+    "use_latency_cap": true,
+    "latency_cap": 1000,
+    "allowed_categories": ["mammal", "bird", "water", "insect", "reptile"],
+    "human_fluency_cohort": "oaf",
+    "use_probe_assets": false,
+    "max_candidates": 5000
+  }
+}
