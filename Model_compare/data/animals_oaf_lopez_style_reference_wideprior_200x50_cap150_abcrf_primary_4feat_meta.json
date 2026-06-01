@@ -1,0 +1,36 @@
+{
+  "features": [
+    "mean_adjacent_distance",
+    "sd_adjacent_distance",
+    "switch_rate_distance",
+    "n_relevant_bigrams_norm"
+  ],
+  "human_features": {
+    "mean_adjacent_distance": 1.0178025228713812,
+    "sd_adjacent_distance": 0.1192775875983272,
+    "switch_rate_distance": 0.2191426273974462,
+    "n_relevant_bigrams_norm": 3.966622162883845
+  },
+  "n_trees": 1000,
+  "seed": 20260601,
+  "reference_path": "/Users/linyitong/Documents/llm/LLM_social_R/semantic_github_minimal/Model_compare/data/animals_oaf_lopez_style_reference_wideprior_200x50_cap150_model_reference.csv",
+  "human_path": "/Users/linyitong/Documents/llm/LLM_social_R/semantic_github_minimal/Model_compare/data/animals_oaf_lopez_style_reference_wideprior_200x50_cap150_human_group_stats.csv",
+  "n_reference_rows": 1200,
+  "n_valid_rows": 1199,
+  "dropped_rows_due_to_nan": 1,
+  "models": [
+    "M0_frequency",
+    "M1_crw",
+    "M2_crw_jump",
+    "M3_fixed_T",
+    "M4_adaptive_T",
+    "M4b_adaptive_T_global"
+  ],
+  "oob_accuracy": 0.7414512093411176,
+  "oob_error_rate": 0.25854879065888237,
+  "selected_model": "M4b_adaptive_T_global",
+  "selected_model_vote_probability": 0.867,
+  "selected_model_local_error": 0.027,
+  "selected_model_abcrf_posterior_probability": 0.973,
+  "error_regression_oob_score": 0.42710586619939106
+}

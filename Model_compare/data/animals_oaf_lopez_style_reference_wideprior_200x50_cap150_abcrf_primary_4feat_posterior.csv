@@ -1,0 +1,7 @@
+model_id,posterior_vote_probability
+M4b_adaptive_T_global,0.867
+M3_fixed_T,0.132
+M4_adaptive_T,0.001
+M0_frequency,0.0
+M1_crw,0.0
+M2_crw_jump,0.0

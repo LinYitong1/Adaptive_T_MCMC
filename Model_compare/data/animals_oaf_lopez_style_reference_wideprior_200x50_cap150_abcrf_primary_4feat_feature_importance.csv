@@ -1,0 +1,5 @@
+feature,importance
+mean_adjacent_distance,0.3562351816672752
+n_relevant_bigrams_norm,0.26197956098317216
+sd_adjacent_distance,0.25864865955429567
+switch_rate_distance,0.12313659779525714
